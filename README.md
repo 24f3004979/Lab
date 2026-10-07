@@ -21,4 +21,3 @@ Dedicated files listed for experimentation with numbers and code along with ther
 
 [!Note]
 Current uv sync would also fetch a default hosting with jupyter-lab web-interface for the projecct so you can also switch for your own setup rather then using it
-# Lab
