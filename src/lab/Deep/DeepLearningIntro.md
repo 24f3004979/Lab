@@ -10,4 +10,4 @@ A branch which deals with big data ingest, and makes powerfull models, Modern bi
 
 ## Forward
 
-Deep learning is the new era of intelligence with its detailed mathematical construction taking mathematical modeling of reality to the next level.
+
