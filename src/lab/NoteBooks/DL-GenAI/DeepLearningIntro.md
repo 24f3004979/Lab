@@ -8,6 +8,3 @@ A branch which deals with big data ingest, and makes powerfull models, Modern bi
 3. Complex relations could be extracted easily
 4. More data more power
 
-## Forward
-
-
