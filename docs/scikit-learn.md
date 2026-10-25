@@ -51,3 +51,19 @@ data preprocessing -> training -> inference
 | sklearn.feature_selection | implements feature selection | feature selection layer component |
 | skelearn.feature_extraction | helping into extraction  | usefull element into extracting features| 
 
+
+### Indexes for most usefull library pulls
+
+1. linear_model , skelarn.trees
+2. linear_model, svm, trees, neighbours, naive_bayes, multiclass
+3. cluster
+4. multioutput
+4. metrics : evaluation endpoint
+5. model_selection : hyper parameter turning based setup for the model
+6. model_inspection
+
+### Conclusion
+
++ remember high level module information -> use base models
++ read the docs | use the notebook based documentation access with high level names
++ worked examples could be greatly used for the ultimate referencing with the library

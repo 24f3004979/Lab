@@ -21,7 +21,7 @@ Transformation of dataset could be simplified with using, transformation fit wit
 calling transformation from training maped object into testing set.
 
 1. Make instance for required class
-2. Initiate the fit_transform api with training dataset
+2. Initiate the `fit_transform` api with training dataset
 3. use transform with the original transforming objeect in test pipeline
 
 QuantileTransformer makes transformation of the data to uniform distribution without need of parameters,
@@ -44,7 +44,7 @@ for implementig since they would retain there relative relations with original f
 2. OneHotEncoder() : used for one-hot encoding features
 use a categories feature with the onehot to pass out required features to pass on with the preprocessing pipeline
     
-    use drop feature with binary and n_categories encoding
+    use drop feature with binary and `n_categories` encoding
     encoder attribute : drop='if binary'
     drop='first' - geting just the n-1 encoder elements
 
@@ -54,7 +54,7 @@ use a categories feature with the onehot to pass out required features to pass o
     of non-usual elements out of the way.
 
 3. Target Encoder | target lock zip code and regin encoding with this shot down 
-    Api structure is strict here with using fit_transform and transform features
+    Api structure is strict here with using `fit_transform` and transform features
 
     use fit_transform() with this due to k-folding internal mechanism with this set, 
     using fit() function is discouraged due to its data leaking possibility and not using k-folding internal
@@ -94,5 +94,5 @@ using binary filteration with the probablity layer for filtering out noise
 
 ### Further reading order priority 
 
-1. (Discretization Read the docs)[https://scikit-learn.org/stable/auto_examples/preprocessing/plot_discretization.html#sphx-glr-auto-examples-preprocessing-plot-discretization-py]
-2. (Kernel Function read)[https://scikit-learn.org/stable/modules/svm.html#svm-kernels]
+1. [Discretization Read the docs](https://scikit-learn.org/stable/auto_examples/preprocessing/plot_discretization.html#sphx-glr-auto-examples-preprocessing-plot-discretization-py)
+2. [Kernel Function read](https://scikit-learn.org/stable/modules/svm.html#svm-kernel)
