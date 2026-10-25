@@ -343,6 +343,16 @@ replace outliers with median | robust with outliers containing dataset
 transform dataset with log transform for affecting all of the dataset with skqwed ness
 
 
+## Dimentionality reduction techniques
+
+Transforming a set of feature into subset of small features,
+taking down large dataset into smaller representation of features with PCA machine kernel.
++ PCA  : Linear dimentionality reduction
++ using svd to project dataset into lower dimension
+
+with `decomposition.pca` api endpoints
+with taking first k principle component,
+we can alredy get the most variance of the dataset to work with
 -----
 
 ## 2. Filter based feature selection
@@ -388,3 +398,57 @@ Wrapper based feature relation
 6. SelectFromModel
 7. SequentialFeatureSelector
 8. More feature selection through kernels and trees
+
+
+## 3. Wraper based feature selection 
+
+1. Recursive feature elimination
+    + Uses an estimator to recursively remove feature
+    + first trains a estimator on features
+    + obtains feature importance from features and removes least important feature
+    + recursivly runs the elimination for obtaining desired set of features
+
+    Use RFEC for non-knowing exact feature number which to select, 
+    this runs `ref` into cross validation setup to find best feature set
+
+    *How to use SelectFromFeature with other featuring elements like linearSVC models ?*
+
+2. Sequential feature selection
+    
+    Performs feature selection with greedy approach
+
+    + forward selection : starting from zero to optimal feature
+    + backward selection : backward with all feature set
+
+3. Applying transformation to diverse set of features
+
+    with different data form consisting different transformers, uniting
+    into single transformer unit with composing component with sklearn interface
+
+    `sklearn.compose` with fundamental components to apply transformation to subsets and combine them.
+
+    1. Column Transformer
+        Unified interface for columns transformation
+
+        + `column_transformation [output concatinated into one set] --> combined into single matrix`
+        + usefull for applying transformation to different set of hetrogenous feature and combine them
+        + combining different feature selection mechanism into a single transformation object
+
+        Application composing with transformer sequence
+
+        ```python 
+        # Initiated sequence with the transformation
+        transformer = ColumnTransformer([
+            ('ageScaler', CountVectorizer(), [0]),
+            ('genderEncoder', OneHotEncoding(dtype='int'), [1])
+        ], 
+            remainder='drop',
+            verbose_feature_name_out=True
+        )
+        ```
+
+    2. Transformed target regressor
+
+        component for linear regression unit,
+        making target values transform with two way transforming unit,
+        could be reversed when required.
