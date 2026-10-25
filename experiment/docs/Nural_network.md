@@ -31,3 +31,4 @@ they work to transform the dataset to make easy for further follow up nurons to 
 
 Final interception of the nurons, and final transformation to the output space, and desired output range targeting.
 it aligns the input from previous hidden layer to align with the problem.
+
