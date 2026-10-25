@@ -1,10 +1,4 @@
-<style>
-  body {
-    font-family: 'Cambria Math';
-  }
-</style>
-
-# IDEAS WITH DEEP LEARNING
+# Ideas with deep learning
 
 A new domain of prediction which could learn patterns, out of dataset and 
 return a really good maping function from given set of input to output.
