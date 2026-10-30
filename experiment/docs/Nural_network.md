@@ -1,34 +1,57 @@
-# Ideas with deep learning
+# Deep Feedforward Network
 
-A new domain of prediction which could learn patterns, out of dataset and 
-return a really good maping function from given set of input to output.
+Learning patterns with the help of nurons alike mathematical models,which computes in layers,
+feeds information to the forward layers to learn patterns from the dataset.
 
-We train parameters which best defines a function to map the two domains.
-Inspired by biological nural network, deep learning consists of layers as the name.
+Composed result of many functions working together, with acyclic graph based flow.
+target to best approximate the underlying pattern $ f^* $ function.
 
-With each nurons firing its computation and connected to other, we see ANN as acyclic graph of functions, 
-linked with weights and biases, which are the parameters model learns to tweak its projecting outputset.
+Nural network, is acyclic graph of functions which works in layers, to train parameters
+for best approximating the underlying pattern in given dataset.FeedForward neural network
+works with forwarding information flow with intermediate computations,
+when computations are re-fed to the network its **recurrent nural network**.
 
-## Components
-1. Input layer
+## 1.1 Emergence of idea of nural networks
 
-Interface where data vectors enters into the subsequent branches,
-with interaction with weights [ random at initial stages - gets trained through learning algorithm,
-to make sure they provide certain weightages to certain feature for further layers]
+We can set ground with understanding scope of linear models, they work really well
+with linear space and linear hyperplanes, with non-linear dataset we need to fix them, 
+take them to the same structure to be able to use the linear functions.
 
-2. Hidden layer
+With $\phi(x)$ being the mapping(rbf) to map features to infinite dimensional space for extracting the linear relations, such that we can apply the linear function.
 
-Generic functions initiated with their parameters, which gets finetuned to work best for its inputsets,
-getin filtered through the learning algorithm along the training way.
+**How to get the mapping $\phi$**
+1. Using generic mapping functions
 
-3. Activation functions
+    + We can generalize well with training set
+    + Testing set cant be easily generalized
+    + focused on local smoothness of function
+    + Non-encoding of enough prior information
+2. Manual Engineer the mapping function
 
-A non-linear function specifically desinged for fine tuning the internal data of the model.
-Does the affine transformation helping the internal function a appropriate dataset for their functions.
-they work to transform the dataset to make easy for further follow up nurons to work well.
+    + Needs domain specific skills
+    + Required dedicated long term time
+    + deligative task to perform
 
-4. Output Layer
+3. **Lock targets to learn**
 
-Final interception of the nurons, and final transformation to the output space, and desired output range targeting.
-it aligns the input from previous hidden layer to align with the problem.
+    Being highly generic and specific with learning the parameter, <br>
+    with training we get the specific maping functions out of all generic functions options.
 
+
+Example : Learning **XOR** function,
+with simple XOR maping we use non-linear function to map the input set into specific space for linear model to work with,
+to make proper maping of XOR subset of information.
+
+using non-linear function to describe features, With most nural networks does with, 
+affine transformation through learned parameters,
+with fixed non-linear activation functions called as activation function.
+
+with the need of non-linear activation function in between we transform the feature space into a space where linear model could map out to the target well then before
+We use non-linear functions because they could help to capture non-linear functions, help to map out to relevent spaces for linear function to workwith, 
+
+Using multiple linear function in layers simply means using one due to mathematical property of collapsing into one linear function equivalency.
+
+## 1.2 Gradient-Based Learning
+
+## More reading
++ [Gradient Based learning | 172 PGN ](https://www.deeplearningbook.org/contents/mlp.html)

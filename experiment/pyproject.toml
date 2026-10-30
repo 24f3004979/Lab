@@ -12,6 +12,8 @@ dependencies = [
     "pandas>=3.0.6",
     "rich>=15.0.0",
     "scikit-learn>=1.9.1",
+    "seaborn>=0.13.2",
     "torch>=2.14.1",
+    "torchvision>=0.29.2",
     "xgboost>=3.4.1",
 ]
