@@ -452,3 +452,5 @@ Wrapper based feature relation
         component for linear regression unit,
         making target values transform with two way transforming unit,
         could be reversed when required.
+
+Keeping low resolution of screen affects something ?
