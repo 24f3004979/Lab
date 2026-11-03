@@ -34,7 +34,7 @@ chain of transformer and estimators
     We can also specify to store the transformation due to their expensive nature
     `Pipeline(steps=steping_stones, memory='pathway')` storing the transforming parametrs and finding
 
-2. FeatureUnion
+2. Feature Union
 
     Combining output of several transformation into one
     transformation feature,
