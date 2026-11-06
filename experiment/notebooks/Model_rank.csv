@@ -1,0 +1,23 @@
+Unnamed: 0,Model,Macro_F1_Score,Status
+Random Forest,0.7219381603762408,Success,
+Random Forest,0.7233948208686252,Success,
+,Model,Macro_F1_Score,Status
+,Model,Macro_F1_Score,Status
+,Model,Macro_F1_Score,Status
+0,Hist Gradient Boosting,0.6015226760880019,Success
+1,Gradient Boosting,0.5990557003488779,Success
+0,Random Forest,0.5811790880869203,Success
+2,Extra Trees,0.5763488150655554,Success
+0,Logistic Regression,0.5761136596798309,Success
+0,Bagging Classifier,0.570504328673394,Success
+3,AdaBoost,0.5689305787315085,Success
+1,K-Neighbors,0.5653235048791976,Success
+1,Decision Tree,0.5600796850199105,Success
+2,Extra Tree,0.557796081459749,Success
+2,Gaussian NB,0.5357738505659192,Success
+1,Ridge Classifier,0.5250114732117458,Success
+3,Passive Aggressive,0.48170084119781925,Success
+3,Multinomial NB,0.4574924213293028,Success
+2,Perceptron,0.4473709150262054,Success
+3,SGD Classifier,0.4328496717416025,Success
+4,Bernoulli NB,0.15807710068528968,Success
