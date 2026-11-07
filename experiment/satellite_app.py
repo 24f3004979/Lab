@@ -18,17 +18,17 @@ transform = transforms.Compose([
 ])
 
 
+import pickle
+
 @st.cache_resource
 def load_model():
-    # weights_only=False is needed if the file holds a whole pickled model.
-    # Only do this for files you created yourself.
-    obj = torch.load(MODEL_PATH, map_location=device, weights_only=False)
+    with open(MODEL_PATH, "rb") as f:
+        obj = pickle.load(f)
 
     if isinstance(obj, torch.nn.Module):
-        # Case 1: the full model was saved
         model = obj
     else:
-        # Case 2: only a state_dict was saved, so rebuild the architecture first
+        # a state_dict was pickled, so rebuild the architecture first
         model = torchvision.models.efficientnet_b0(weights=None)
         model.classifier = torch.nn.Sequential(
             torch.nn.Dropout(p=0.2, inplace=True),
@@ -38,12 +38,11 @@ def load_model():
 
     return model.to(device).eval()
 
-
 model = load_model()
 
 # Simple UI with streamlit
 
-st.title("Satellite Image Classifier")
+st.title("अंतरिक्ष चक्षु")
 st.write("Upload a satellite image and the model will predict its class.")
 
 file = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png"])
