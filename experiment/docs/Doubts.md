@@ -1,4 +1,4 @@
-# Doubts index
+# Doubts index 💀
 
 1. When we explain the architechture in terms of those crosses and numbers what do each of them specify each ?
 

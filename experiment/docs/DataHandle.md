@@ -26,6 +26,76 @@ we can derive some really usefull structure and information with using our stati
 - Build up abstract layers with numerical transformation to see patterns
 - [ Bit advanced ] Map to different dimension to change the perspective to see dataset.
 
+## Brief note about scikit learn library
+
+This library is lined up with machine learning framework,
+
+API lined up for each core component of machine learning
+1. Training data and preprocessing 
+2. Model building and optimization procedure
+3. model selection and evalutation
+4. Model inspection
+
+### API design principle basics
+
+With simple consistent interfaces and great resilient work in the hood
+
++ All api share same consistent interface
++ Inspection learnable parameters are well exposed for inspection
++ Sensible defaults works with auto default methods for baseline modeling
++ uses standard data flow of numpy structure as matrix
++ simplicity with simple interface with composible units
+
+### Building blocks
+
+1. Transformer
+
+    transform() -> for transforming dataset
+    fit() -> learns parameters | can induce data leakage
+    fit_transform() -> learns and fit | using k-fold | better option
+
+2. Estimator
+
+    estimator element for estimating
+    based on training dataset, and hyperparameter 
+    fit() method only
+
+3. Predictors
+
+    Making predictio in dataset.
+    predict() -> prediction through dataset
+    score() -> score the prediction 
+
+These component lined up into the sequence
+data preprocessing -> training -> inference
+
+### Dataset API endpoints
+
+| endpoint | functionality | remarks |
+| ------------- | -------------- | -------------- |
+| sklearn.datasets | Loading datasets | custom dataset could also be loaded |
+| sklearn.preprocessing | scaling, centering, normalization, binarization | essential preprocessing components |
+| skelearn.impute | filling missing values | fills up missing values |
+| sklearn.feature_selection | implements feature selection | feature selection layer component |
+| skelearn.feature_extraction | helping into extraction  | usefull element into extracting features| 
+
+
+### Indexes for most usefull library pulls
+
+1. linear_model , skelarn.trees
+2. linear_model, svm, trees, neighbours, naive_bayes, multiclass
+3. cluster
+4. multioutput
+4. metrics : evaluation endpoint
+5. model_selection : hyper parameter turning based setup for the model
+6. model_inspection
+
+### Conclusion
+
++ remember high level module information -> use base models
++ read the docs | use the notebook based documentation access with high level names
++ worked examples could be greatly used for the ultimate referencing with the library
+
 
 
 ### Importance of standard scaling
@@ -212,7 +282,6 @@ sklearn.impute
 
 3. MissingIndicator  : provides the indicator for the data availability
 
------
 
 ## Handling missing values
 
@@ -453,4 +522,51 @@ Wrapper based feature relation
         making target values transform with two way transforming unit,
         could be reversed when required.
 
-Keeping low resolution of screen affects something ?
+### Transformers with sklearn
+
+With sklearn base components, we can compose multiple transformers to be used
+as a single pipeline component, for consistent interface for passing training, 
+and testing pipelines.
+chain of transformer and estimators 
+
+1. Pipeline
+
+    Construct a chain of multiple transformer,
+    execute a fixed sequence of steps with dataset, 
+    preprocessing and modeling
+
+    Works to load up transformers
+
+    `sklearn.pipeline.Pipeline` interface
+
+    sequentially apply transformers and estimators, 
+    intermediate steps must apply fit and transform
+
+    Assembeled steps into one for easy validation
+
+    Building pipeline with `Pipeline()`
+    input set list of tuples fed into the pipeline constructor
+    
+    benifits with pipeline
+    simple one step training steps
+    `pipe.fit_transform(dataset)`
+    calling all transformers and estimator in one shot
+    easy usage in testing and validation sequence
+
+    **GridSearchcv** | Makes simplicity for parameter and combination selection
+
+    We can also specify to store the transformation due to their expensive nature
+    `Pipeline(steps=steping_stones, memory='pathway')` storing the transforming parametrs and finding
+
+2. Feature Union
+
+    Combining output of several transformation into one
+    transformation feature,
+
+    Loading estimators 
+    with feature union we can compose more rich steping with transformations, 
+    estimator to the dataflow with simple composable component based code.
+
+3. Column Transformer
+
+    Works for parallel processing of subsequent pipelines winth targeted columns, which makes up the component for the ultimate trasforming pipeline to make up at the end of the pipeline construction.

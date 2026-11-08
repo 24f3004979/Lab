@@ -1,4 +1,62 @@
-# CNN with vision
+# Deep Feedforward Network
+
+Learning patterns with the help of nurons alike mathematical models,which computes in layers,
+feeds information to the forward layers to learn patterns from the dataset.
+
+Composed result of many functions working together, with acyclic graph based flow.
+target to best approximate the underlying pattern $ f^* $ function.
+
+Nural network, is acyclic graph of functions which works in layers, to train parameters
+for best approximating the underlying pattern in given dataset.FeedForward neural network
+works with forwarding information flow with intermediate computations,
+when computations are re-fed to the network its **recurrent nural network**.
+
+## 1.1 Emergence of idea of nural networks
+
+We can set ground with understanding scope of linear models, they work really well
+with linear space and linear hyperplanes, with non-linear dataset we need to fix them, 
+take them to the same structure to be able to use the linear functions.
+
+With $\phi(x)$ being the mapping(rbf) to map features to infinite dimensional space for extracting the linear relations, such that we can apply the linear function.
+
+**How to get the mapping $\phi$**
+1. Using generic mapping functions
+
+    + We can generalize well with training set
+    + Testing set cant be easily generalized
+    + focused on local smoothness of function
+    + Non-encoding of enough prior information
+2. Manual Engineer the mapping function
+
+    + Needs domain specific skills
+    + Required dedicated long term time
+    + deligative task to perform
+
+3. **Lock targets to learn**
+
+    Being highly generic and specific with learning the parameter, <br>
+    with training we get the specific maping functions out of all generic functions options.
+
+
+Example : Learning **XOR** function,
+with simple XOR maping we use non-linear function to map the input set into specific space for linear model to work with,
+to make proper maping of XOR subset of information.
+
+using non-linear function to describe features, With most nural networks does with, 
+affine transformation through learned parameters,
+with fixed non-linear activation functions called as activation function.
+
+with the need of non-linear activation function in between we transform the feature space into a space where linear model could map out to the target well then before
+We use non-linear functions because they could help to capture non-linear functions, help to map out to relevent spaces for linear function to workwith, 
+
+Using multiple linear function in layers simply means using one due to mathematical property of collapsing into one linear function equivalency.
+
+## 1.2 Gradient-Based Learning
+
+## More reading
++ [Gradient Based learning | 172 PGN ](https://www.deeplearningbook.org/contents/mlp.html)
+
+## Deep Learning with computer vision power 🤖
 
 A branch where we deal with images to extract data and patterns thorugh numerical connection of images,
 images we percieve as visual input, computers percieve with numerical values.
@@ -122,3 +180,31 @@ $$
     With a powerfull concept to improve existing connection work more robust at testing phase, we use dropout for masking activations to zero with uniform probability at training phase, making network more resilient and form stronger network connection with remaining connections.
 
     During training rest of non-de-activated nurons gets scalled weights to keep the training and testing conditions expections equal, leading for simplification and robust netowork architechture.
+
+
+### Transfer learning 🧠
+
+Training model from scratch needs huge dataset along with huge computational cost, due to which we can leverage the existing model for our needs.
+
+### Using Existing model
++ Use pre-trained convolutional base
++ Remove original classifier head
++ Add new classifier head
++ Train only the new classifier head only
+
+#### Basic ways to use pretrained weapon
++ Using them as the feature extractor > Ideal for small dataset
++ Fine Tuner : Initialize the network with pretrained weights
+
+unfreeze few top layers or the whole network for the slight training with small learning rate would guide the model to be trained on the dataset.
+Use with larger dataset availability.
+
+## Transfer learning for segmentation
+
+For segmentation (per pixel classifier), transfer learning is used to build the encoder of the encoder-decoder part of the network.
+
+1. Architectures : U-Net and FCN works at the encoder part of the encoder-decoder part of the problem.
+
+2. Pretrained Model : ResNet or VGG based 
+
+3. Training the decoder : Takes the powerfull low-resolution features from the encoder and upsamples them to high resolution.
